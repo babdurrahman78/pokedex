@@ -39,15 +39,14 @@ function App() {
                 scrollThreshold={1}
                 loader={<Loading />}
               >
-            <div className="pokemon-list">
-              
+            <div className="pokemon-list"> 
                 {poke.map((poke, index) => (
                   <Card poke={poke} index={index + 1} key={index} />
                 ))}
             </div>
             </InfiniteScroll>
           </Route>
-          <Route>
+          <Route path="/:name">
             <Pokemon />
           </Route>
         </Switch>

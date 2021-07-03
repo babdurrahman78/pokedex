@@ -1,8 +1,9 @@
 import './Card.css';
+import { Link } from "react-router-dom";
 
 const Card = ({poke, index}) => {
     return ( 
-        <a href="#" className="card">
+        <Link to={`/${poke.name}`} className="card">
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
                 index
@@ -10,7 +11,7 @@ const Card = ({poke, index}) => {
               alt={poke.name}
             />
             <p><b>{poke.name}</b></p> 
-          </a>
+          </Link>
      );
 }
  
