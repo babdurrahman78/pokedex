@@ -41,12 +41,10 @@ span {
 }
 
 .pokemon-details .moves{
-    background-color: #7FFFD4;
     border-radius: 10px;
 }
 
 .pokemon-details .moves-flex{
-    
     justify-content: center;
     display: flex;
     flex-wrap: wrap;
