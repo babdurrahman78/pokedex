@@ -15,17 +15,17 @@ const Pokemon = () => {
 
   return (
     <div className="pokemon-details">
-      {pokemon.map((poke, index) => (
-        <div>
+      {pokemon.map((poke) => (
+        <div key={poke.id}>
           <img
             src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-              index + 1
+              poke.id
             }.png`}
             alt={poke.name}
           />
           <p>
             {poke.name}
-            <span>{`#${index + 1}`}</span>
+            <span>{`#${poke.id}`}</span>
           </p>
           <div className="types">
             {poke.types.map((type, index) => (
