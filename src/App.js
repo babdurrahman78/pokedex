@@ -3,6 +3,8 @@ import Navbar from "./components/Navbar.js";
 import Card from "./components/Card.js";
 import Loading from "./components/Loading.js";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Pokemon from "./Pokemon.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { useState, useEffect } from "react";
 
@@ -25,22 +27,32 @@ function App() {
   }, []);
 
   return (
-    <InfiniteScroll
-      dataLength={poke.length}
-      next={fetchData}
-      hasMore={true}
-      scrollThreshold={1}
-      loader={<Loading />}
-    >
+    <Router>
       <div className="App">
         <Navbar />
-        <div className="pokemon-list">
-          {poke.map((poke, index) => (
-            <Card poke={poke} index={index + 1} key={index} />
-          ))}
-        </div>
+        <Switch>
+          <Route exact path="/">
+          <InfiniteScroll
+                dataLength={poke.length}
+                next={fetchData}
+                hasMore={true}
+                scrollThreshold={1}
+                loader={<Loading />}
+              >
+            <div className="pokemon-list">
+              
+                {poke.map((poke, index) => (
+                  <Card poke={poke} index={index + 1} key={index} />
+                ))}
+            </div>
+            </InfiniteScroll>
+          </Route>
+          <Route>
+            <Pokemon />
+          </Route>
+        </Switch>
       </div>
-    </InfiniteScroll>
+    </Router>
   );
 }
 
