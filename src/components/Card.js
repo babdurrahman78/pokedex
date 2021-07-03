@@ -5,7 +5,7 @@ const Card = ({poke, index}) => {
         <a href="#" className="card">
             <img
               src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                index + 1
+                index
               }.png`}
               alt={poke.name}
             />

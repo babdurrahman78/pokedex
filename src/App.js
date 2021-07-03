@@ -1,6 +1,7 @@
 import "./App.css";
 import Navbar from "./components/Navbar.js";
 import Card from "./components/Card.js";
+import Loading from "./components/Loading.js";
 import InfiniteScroll from "react-infinite-scroll-component";
 
 import { useState, useEffect } from "react";
@@ -29,7 +30,7 @@ function App() {
       next={fetchData}
       hasMore={true}
       scrollThreshold={1}
-      loader={<p>loading...</p>}
+      loader={<Loading />}
     >
       <div className="App">
         <Navbar />
