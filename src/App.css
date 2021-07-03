@@ -1,7 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Tourney:wght@100;500&display=swap');
+
 * {
   margin: 0;
   padding: 0;
-  font-family: 'roboto';
+  font-family: 'Tourney', cursive;
   color: #333;
 }
 

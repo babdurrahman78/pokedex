@@ -10,7 +10,7 @@ const Card = ({poke, index}) => {
               }.png`}
               alt={poke.name}
             />
-            <p><b>{poke.name}</b></p> 
+            <p>{poke.name}</p> 
           </Link>
      );
 }
