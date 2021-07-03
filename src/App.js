@@ -1,5 +1,6 @@
 import "./App.css";
 import Navbar from "./components/Navbar.js";
+import Card from "./components/Card.js";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -21,15 +22,7 @@ function App() {
       <Navbar />
       <div className="pokemon-list">
         {poke.map((poke, index) => (
-          <a href="#" className="card" key={index}>
-            <img
-              src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${
-                index + 1
-              }.png`}
-              alt={poke.name}
-            />
-            <p><b>{poke.name}</b></p> 
-          </a>
+          <Card poke={poke} index={index}/>
         ))}
       </div>
     </div>
